@@ -1,4 +1,6 @@
 ---
+import Card from "../components/Card.astro";
+
 interface Props {
   title: string;
 }
@@ -17,6 +19,16 @@ const { title } = Astro.props;
     <title>Gestor de Gastos - {title}</title>
   </head>
   <body class="bg-zinc-900 font-sans">
-    <slot />
+    <main class="min-h-7 max-w-4xl mx-auto">
+      <h1 class="text-purple-700 text-7xl mt-8 mb-16 font-black text-center">
+        Gestor de <span class="text-orange-500">Gastos</span>
+      </h1>
+
+      <Card>
+        <h2 class="text-center text-2xl font-bold">{title}</h2>
+
+        <slot />
+      </Card>
+    </main>
   </body>
 </html>
