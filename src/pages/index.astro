@@ -4,43 +4,37 @@ import Card from "../components/Card.astro";
 ---
 
 <Layout title="Bienvenido">
-  <main class="container mx-auto">
-    <h1 class="text-purple-700 text-7xl my-4 font-black text-center">
-      Gestor de <span class="text-orange-500">Gastos</span>
-    </h1>
+  <h1 class="text-purple-700 text-7xl my-4 font-black text-center">
+    Gestor de <span class="text-orange-500">Gastos</span>
+  </h1>
 
-    <p class="text-white text-center my-4 text-2xl">
-      Gestor e gastos es un proyectos para que puedas administrar tu <strong
-        >economia.</strong
-      >
-    </p>
+  <p class="text-white text-center my-4 text-2xl">
+    Gestor e gastos es un proyectos para que puedas administrar tu <strong
+      >economia.</strong
+    >
+  </p>
 
-    <div class="space-y-8">
-      <div class="hover:cursor-pointer">
-        <Card>
-          <a href="/register">
-            <h2 class="text-xl text-center mb-2">
-              ¿Aun no tienes una cuentra?
-            </h2>
+  <div class="space-y-8">
+    <div class="hover:cursor-pointer">
+      <Card>
+        <a href="/register">
+          <h2 class="text-xl text-center mb-2">¿Aun no tienes una cuentra?</h2>
 
-            <p class="text-center">
-              Registrate, y comienza a administrar tu dinero.
-            </p>
-          </a>
-        </Card>
-      </div>
-
-      <div class="hover:cursor-pointer">
-        <Card>
-          <a href="/signin">
-            <h2 class="text-xl text-center mb-2">Ya tienes una cuentra?</h2>
-
-            <p class="text-center">
-              Inicia sesión y sigue administrando dinero.
-            </p>
-          </a>
-        </Card>
-      </div>
+          <p class="text-center">
+            Registrate, y comienza a administrar tu dinero.
+          </p>
+        </a>
+      </Card>
     </div>
-  </main>
+
+    <div class="hover:cursor-pointer">
+      <Card>
+        <a href="/signin">
+          <h2 class="text-xl text-center mb-2">Ya tienes una cuentra?</h2>
+
+          <p class="text-center">Inicia sesión y sigue administrando dinero.</p>
+        </a>
+      </Card>
+    </div>
+  </div>
 </Layout>

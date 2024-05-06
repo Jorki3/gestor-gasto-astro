@@ -1,0 +1,58 @@
+---
+import Card from "../Card.astro";
+---
+
+<div class="my-4">
+  <Card>
+    <div class="space-y-4">
+      <h1 class="text-4xl font-bold text-center">Bienvenido</h1>
+      <p class="text-center">
+        Registra tu presupuesto mensual para comenzar a utilizar la app dando
+        click en el boton de abajo
+      </p>
+
+      <button
+        class="w-full py-2 rounded-lg text-xl bg-indigo-950 hover:bg-gradient-to-r hover:from-indigo-950 hover:to-zinc-900"
+        type="submit">Comenzar</button
+      >
+    </div>
+  </Card>
+</div>
+
+<div class="my-4">
+  <Card>
+    <div
+      class="w-full flex md:space-x-4 space-y-4 md:space-y-0 flex-col md:flex-row"
+    >
+      <div class="flex-1">[Grafica]</div>
+
+      <div class="flex-1 space-y-4">
+        <ul>
+          <li>Presupuesto mensual: $1000.00</li>
+          <li>Gasto mensual: $1000.00</li>
+          <li>Presupuesto disponible: $1000.00</li>
+        </ul>
+
+        <div
+          class="w-full flex md:space-x-4 space-y-4 md:space-y-0 flex-col md:flex-row"
+        >
+          <div class="flex-1">
+            <button
+              class="w-full py-2 rounded-lg bg-orange-950 hover:bg-gradient-to-r hover:from-orange-950 hover:to-orange-900"
+            >
+              Editar presupuesto</button
+            >
+          </div>
+
+          <div class="flex-1">
+            <button
+              class="w-full py-2 rounded-lg bg-indigo-950 hover:bg-gradient-to-r hover:from-indigo-950 hover:to-zinc-900"
+            >
+              Agregar gasto</button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </Card>
+</div>
