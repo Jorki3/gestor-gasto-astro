@@ -1,4 +1,15 @@
-<form action="" class="space-y-4">
+---
+const { cookies, redirect } = Astro;
+
+const accessToken = cookies.get("sb-access-token");
+const refreshToken = cookies.get("sb-refresh-token");
+
+if (accessToken && refreshToken) {
+  return redirect("/dashboard");
+}
+---
+
+<form action="../../pages/api/auth/signin" class="space-y-4">
   <div class="space-y-2 w-full">
     <label for="email" class="text-zinc-300 text-xl">Email</label>
     <input

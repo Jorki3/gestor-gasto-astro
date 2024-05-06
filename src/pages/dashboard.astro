@@ -3,6 +3,35 @@ import Layout from "../layouts/Layout.astro";
 import BudgetInfo from "../components/app/BudgetInfo.astro";
 import ExpenseForm from "../components/app/ExpenseForm.astro";
 import ExpenseList from "../components/app/ExpenseList.astro";
+
+import { supabase } from "../lib/supabase";
+
+const { cookies, redirect } = Astro;
+
+const accessToken = cookies.get("sb-access-token");
+const refreshToken = cookies.get("sb-refresh-token");
+
+if (!accessToken || !refreshToken) {
+  return redirect("/signin");
+}
+
+const { data, error } = await supabase.auth.setSession({
+  refresh_token: refreshToken.value,
+  access_token: accessToken.value,
+});
+
+if (error) {
+  cookies.delete("sb-access-token", {
+    path: "/",
+  });
+  cookies.delete("sb-refresh-token", {
+    path: "/",
+  });
+
+  return redirect("/signin");
+}
+
+const email = data?.user?.email;
 ---
 
 <Layout title="Dashboard">
